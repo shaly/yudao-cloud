@@ -3,16 +3,16 @@
 spring:
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848 # Nacos 服务器地址
-      username: # Nacos 账号
-      password: # Nacos 密码
+      server-addr: 144.34.178.243:8848 # Nacos 服务器地址
+      username: nacos # Nacos 账号
+      password: nacos # Nacos 密码
       discovery: # 【配置中心】配置项
-        namespace: dev # 命名空间。这里使用 dev 开发环境
+        namespace: e19da7d9-1f30-446f-822b-7c9f5c01d5f9 # 命名空间。这里使用 dev 开发环境【命名空间ID】
         group: DEFAULT_GROUP # 使用的 Nacos 配置分组，默认为 DEFAULT_GROUP
         metadata:
           version: 1.0.0 # 服务实例的版本号，可用于灰度发布
       config: # 【注册中心】配置项
-        namespace: dev # 命名空间。这里使用 dev 开发环境
+        namespace: e19da7d9-1f30-446f-822b-7c9f5c01d5f9 # 命名空间。这里使用 dev 开发环境
         group: DEFAULT_GROUP # 使用的 Nacos 配置分组，默认为 DEFAULT_GROUP
 
 --- #################### 数据库相关配置 ####################

@@ -1,3 +1,25 @@
+### 注意；
+1.代码拉下来很久还没有成功下载所有jar包的话直接关闭idea然后重新打开。
+2.数据库sql初始化
+3.reids
+docker pull redis
+docker run -d --name redis-server -p 46379:6379 -v /usr/local/games/docker/redis/data:/data redis  --requirepass pwd123456
+docker exec -it redis-server redis-cli
+4.nacos
+    安装说明：https://www.iocoder.cn/Nacos/install/?yudao-cloud
+    部署地址：http://144.34.178.243:8848/nacos 账号密码：nacos nacos
+装完成之后，需要创建 dev 命名空间，如下图所示：
+
+注意！新建命名空间时，namespace用的是“命名空间ID”
+3.
+3.
+3.
+3.
+3.
+3.
+3.
+3. 
+
 <p align="center">
  <img src="https://img.shields.io/badge/Spring%20Cloud-2021-blue.svg" alt="Coverage Status">
  <img src="https://img.shields.io/badge/Spring%20Boot-2.7.18-blue.svg" alt="Downloads">
@@ -365,3 +387,4 @@
 | ![](/.image/admin-uniapp/07.png) | ![](/.image/admin-uniapp/08.png) | ![](/.image/admin-uniapp/09.png) |
 
 目前已经实现登录、我的、工作台、编辑资料、头像修改、密码修改、常见问题、关于我们等基础功能。
+
