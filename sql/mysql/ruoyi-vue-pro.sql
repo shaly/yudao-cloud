@@ -4,7 +4,7 @@
  Source Server         : 127.0.0.1 MySQL
  Source Server Type    : MySQL
  Source Server Version : 80200 (8.2.0)
- Source Host           : 127.0.0.1:3306
+ Source Host           : 144.34.178.243:43306
  Source Schema         : ruoyi-vue-pro
 
  Target Server Type    : MySQL
