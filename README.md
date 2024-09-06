@@ -1,18 +1,30 @@
 ### 注意；
 1.代码拉下来很久还没有成功下载所有jar包的话直接关闭idea然后重新打开。
 2.数据库sql初始化
+mac安装数据库：
+docker run -d -p 43306:3306 --name mysql43306 -e MYSQL_ROOT_PASSWORD=pwd123456 amd64/mysql:5.7
+进入容器登录mysql然后执行：
+mysql -u root -p 然后输入密码进行登录
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'pwd123456';
+FLUSH PRIVILEGES;
+退出，然后重启docker容器
 3.reids
 docker pull redis
 docker run -d --name redis-server -p 46379:6379 -v /usr/local/games/docker/redis/data:/data redis  --requirepass pwd123456
 docker exec -it redis-server redis-cli
 4.nacos
+本地：
+docker pull nacos/nacos-server:latest
+docker run --name nacos-standalone -d -p 48848:8848 -p 49848:9848 -p 49849:9849 nacos/nacos-server:latest
+
+服务器：
 https://github.com/alibaba/nacos/releases
     安装说明：https://www.iocoder.cn/Nacos/install/?yudao-cloud
-    部署地址：http://144.34.178.243:8848/nacos 账号密码：nacos nacos
+    部署地址：http://127.0.0.1:8848/nacos 账号密码：nacos nacos
 装完成之后，需要创建 dev 命名空间，如下图所示：
 
 注意！新建命名空间时，namespace用的是“命名空间ID”
-3.
+4.商城登录验证码9999
 3.
 3.
 3.
