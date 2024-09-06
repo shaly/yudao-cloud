@@ -6,6 +6,7 @@ docker pull redis
 docker run -d --name redis-server -p 46379:6379 -v /usr/local/games/docker/redis/data:/data redis  --requirepass pwd123456
 docker exec -it redis-server redis-cli
 4.nacos
+https://github.com/alibaba/nacos/releases
     安装说明：https://www.iocoder.cn/Nacos/install/?yudao-cloud
     部署地址：http://144.34.178.243:8848/nacos 账号密码：nacos nacos
 装完成之后，需要创建 dev 命名空间，如下图所示：
