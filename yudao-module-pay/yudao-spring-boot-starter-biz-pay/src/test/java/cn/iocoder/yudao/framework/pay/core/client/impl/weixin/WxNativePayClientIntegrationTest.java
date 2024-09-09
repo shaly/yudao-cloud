@@ -39,8 +39,8 @@ public class WxNativePayClientIntegrationTest {
                 .setDescription("测试支付-body")
                 .setAmount(new WxPayUnifiedOrderV3Request.Amount().setTotal(1)) // 单位分
                 .setTimeExpire(formatDateV3(LocalDateTimeUtils.addTime(Duration.ofMinutes(2))))
-                .setSceneInfo(new WxPayUnifiedOrderV3Request.SceneInfo().setPayerClientIp("127.0.0.1"))
-                .setNotifyUrl("http://127.0.0.1:48080");
+                .setSceneInfo(new WxPayUnifiedOrderV3Request.SceneInfo().setPayerClientIp("144.34.178.243"))
+                .setNotifyUrl("http://144.34.178.243:48080");
         System.out.println("========= request ==========");
         System.out.println(JsonUtils.toJsonPrettyString(request));
         String response = client.createOrderV3(TradeTypeEnum.NATIVE, request);

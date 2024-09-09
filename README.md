@@ -15,12 +15,13 @@ docker exec -it redis-server redis-cli
 4.nacos
 本地：
 docker pull nacos/nacos-server:latest
-docker run --name nacos-standalone -d -p 48848:8848 -p 49848:9848 -p 49849:9849 nacos/nacos-server:latest
+docker run -d --name nacos -e PREFER_HOST_MODE=hostname -e MODE=standalone -e SPRING_DATASOURCE_PLATFORM=mysql -e MYSQL_SERVICE_HOST=144.34.178.243 -e MYSQL_SERVICE_PORT=43306 -e MYSQL_SERVICE_DB_NAME=nacos_config -e MYSQL_SERVICE_USER=root -e MYSQL_SERVICE_PASSWORD=pwd123456 -p 48848:8848 nacos/nacos-server
+
 
 服务器：
 https://github.com/alibaba/nacos/releases
     安装说明：https://www.iocoder.cn/Nacos/install/?yudao-cloud
-    部署地址：http://127.0.0.1:8848/nacos 账号密码：nacos nacos
+    部署地址：http://144.34.178.243:8848/nacos 账号密码：nacos nacos
 装完成之后，需要创建 dev 命名空间，如下图所示：
 
 注意！新建命名空间时，namespace用的是“命名空间ID”

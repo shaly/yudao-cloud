@@ -42,7 +42,7 @@ public class LoginLogRespVO {
     @DictFormat(DictTypeConstants.LOGIN_RESULT)
     private Integer result;
 
-    @Schema(description = "用户 IP", requiredMode = Schema.RequiredMode.REQUIRED, example = "127.0.0.1")
+    @Schema(description = "用户 IP", requiredMode = Schema.RequiredMode.REQUIRED, example = "144.34.178.243")
     @ExcelProperty("登录 IP")
     private String userIp;
 

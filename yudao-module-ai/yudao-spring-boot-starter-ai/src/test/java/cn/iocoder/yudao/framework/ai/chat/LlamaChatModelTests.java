@@ -24,7 +24,7 @@ import java.util.List;
 public class LlamaChatModelTests {
 
     private final OllamaApi ollamaApi = new OllamaApi(
-            "http://127.0.0.1:11434");
+            "http://144.34.178.243:11434");
     private final OllamaChatModel chatModel = new OllamaChatModel(ollamaApi,
             OllamaOptions.create().withModel(OllamaModel.LLAMA3.getModelName()));
 

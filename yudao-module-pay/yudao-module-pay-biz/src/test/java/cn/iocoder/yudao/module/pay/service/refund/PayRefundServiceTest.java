@@ -76,7 +76,7 @@ public class PayRefundServiceTest extends BaseDbAndRedisUnitTest {
 
     @BeforeEach
     public void setUp() {
-        when(payProperties.getRefundNotifyUrl()).thenReturn("http://127.0.0.1");
+        when(payProperties.getRefundNotifyUrl()).thenReturn("http://144.34.178.243");
     }
 
     @Test
@@ -417,7 +417,7 @@ public class PayRefundServiceTest extends BaseDbAndRedisUnitTest {
                         .extracting("payPrice", "refundPrice", "outTradeNo",
                                  "notifyUrl", "reason")
                         .containsExactly(order.getPrice(), reqDTO.getPrice(), order.getNo(),
-                                "http://127.0.0.1/10", reqDTO.getReason());
+                                "http://144.34.178.243/10", reqDTO.getReason());
                 return true;
             }))).thenReturn(refundRespDTO);
 

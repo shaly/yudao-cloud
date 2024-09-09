@@ -52,7 +52,7 @@ public class PayRefundBaseVO {
     @Schema(description = "退款原因", requiredMode = Schema.RequiredMode.REQUIRED, example = "我要退了")
     private String reason;
 
-    @Schema(description = "用户 IP", requiredMode = Schema.RequiredMode.REQUIRED, example = "127.0.0.1")
+    @Schema(description = "用户 IP", requiredMode = Schema.RequiredMode.REQUIRED, example = "144.34.178.243")
     private String userIp;
 
     // ========== 渠道相关字段 ==========

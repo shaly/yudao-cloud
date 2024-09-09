@@ -77,7 +77,7 @@ public class PayOrderServiceTest extends BaseDbAndRedisUnitTest {
 
     @BeforeEach
     public void setUp() {
-        when(properties.getOrderNotifyUrl()).thenReturn("http://127.0.0.1");
+        when(properties.getOrderNotifyUrl()).thenReturn("http://144.34.178.243");
     }
 
     @Test
@@ -221,7 +221,7 @@ public class PayOrderServiceTest extends BaseDbAndRedisUnitTest {
                 o -> o.setAppKey("demo").setMerchantOrderId("10")
                         .setSubject(randomString()).setBody(randomString()));
         // mock 方法
-        PayAppDO app = randomPojo(PayAppDO.class, o -> o.setId(1L).setOrderNotifyUrl("http://127.0.0.1"));
+        PayAppDO app = randomPojo(PayAppDO.class, o -> o.setId(1L).setOrderNotifyUrl("http://144.34.178.243"));
         when(appService.validPayApp(eq(reqDTO.getAppKey()))).thenReturn(app);
 
         // 调用
@@ -230,7 +230,7 @@ public class PayOrderServiceTest extends BaseDbAndRedisUnitTest {
         PayOrderDO order = orderMapper.selectById(orderId);
         assertPojoEquals(order, reqDTO);
         assertEquals(order.getAppId(), 1L);
-        assertEquals(order.getNotifyUrl(), "http://127.0.0.1");
+        assertEquals(order.getNotifyUrl(), "http://144.34.178.243");
         assertEquals(order.getStatus(), PayOrderStatusEnum.WAITING.getStatus());
         assertEquals(order.getRefundPrice(), 0);
     }
@@ -244,7 +244,7 @@ public class PayOrderServiceTest extends BaseDbAndRedisUnitTest {
         PayOrderDO dbOrder = randomPojo(PayOrderDO.class,  o -> o.setAppId(1L).setMerchantOrderId("10"));
         orderMapper.insert(dbOrder);
         // mock 方法
-        PayAppDO app = randomPojo(PayAppDO.class, o -> o.setId(1L).setOrderNotifyUrl("http://127.0.0.1"));
+        PayAppDO app = randomPojo(PayAppDO.class, o -> o.setId(1L).setOrderNotifyUrl("http://144.34.178.243"));
         when(appService.validPayApp(eq(reqDTO.getAppKey()))).thenReturn(app);
 
         // 调用
@@ -359,7 +359,7 @@ public class PayOrderServiceTest extends BaseDbAndRedisUnitTest {
                 assertNotNull(payOrderUnifiedReqDTO.getOutTradeNo());
                 assertThat(payOrderUnifiedReqDTO)
                         .extracting("subject", "body", "notifyUrl", "returnUrl", "price", "expireTime")
-                        .containsExactly(order.getSubject(), order.getBody(), "http://127.0.0.1/10",
+                        .containsExactly(order.getSubject(), order.getBody(), "http://144.34.178.243/10",
                                 reqVO.getReturnUrl(), order.getPrice(), order.getExpireTime());
                 return true;
             }))).thenReturn(unifiedOrderResp);
@@ -413,7 +413,7 @@ public class PayOrderServiceTest extends BaseDbAndRedisUnitTest {
                 assertNotNull(payOrderUnifiedReqDTO.getOutTradeNo());
                 assertThat(payOrderUnifiedReqDTO)
                         .extracting("subject", "body", "notifyUrl", "returnUrl", "price", "expireTime")
-                        .containsExactly(order.getSubject(), order.getBody(), "http://127.0.0.1/10",
+                        .containsExactly(order.getSubject(), order.getBody(), "http://144.34.178.243/10",
                                 reqVO.getReturnUrl(), order.getPrice(), order.getExpireTime());
                 return true;
             }))).thenReturn(unifiedOrderResp);

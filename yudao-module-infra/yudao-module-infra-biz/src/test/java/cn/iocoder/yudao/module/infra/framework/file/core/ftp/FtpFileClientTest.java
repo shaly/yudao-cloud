@@ -15,7 +15,7 @@ public class FtpFileClientTest {
     public void test() {
         // 创建客户端
         FtpFileClientConfig config = new FtpFileClientConfig();
-        config.setDomain("http://127.0.0.1:48080");
+        config.setDomain("http://144.34.178.243:48080");
         config.setBasePath("/home/ftp");
         config.setHost("kanchai.club");
         config.setPort(221);

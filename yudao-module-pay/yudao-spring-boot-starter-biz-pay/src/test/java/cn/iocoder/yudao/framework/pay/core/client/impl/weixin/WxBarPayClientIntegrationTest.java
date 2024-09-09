@@ -43,7 +43,7 @@ public class WxBarPayClientIntegrationTest {
                 .detail("测试支付-detail")
                 .totalFee(1) // 单位分
                 .timeExpire(formatDateV2(LocalDateTimeUtils.addTime(Duration.ofMinutes(2))))
-                .spbillCreateIp("127.0.0.1")
+                .spbillCreateIp("144.34.178.243")
                 .authCode("134298744426278497")
                 .build();
         System.out.println("========= request ==========");

@@ -52,7 +52,7 @@ public class ApiAccessLogRespVO {
     @ExcelProperty("响应结果")
     private String responseBody;
 
-    @Schema(description = "用户 IP", requiredMode = Schema.RequiredMode.REQUIRED, example = "127.0.0.1")
+    @Schema(description = "用户 IP", requiredMode = Schema.RequiredMode.REQUIRED, example = "144.34.178.243")
     @ExcelProperty("用户 IP")
     private String userIp;
 

@@ -127,7 +127,7 @@ spring:
         endpoint: https://eastusprejade.openai.azure.com
         api-key: xxx
     ollama:
-      base-url: http://127.0.0.1:11434
+      base-url: http://144.34.178.243:11434
       chat:
         model: llama3
     stabilityai:
@@ -159,7 +159,7 @@ yudao:
     suno:
       enable: true
       #    base-url: https://suno-55ishh05u-status2xxs-projects.vercel.app
-      base-url: http://127.0.0.1:3001
+      base-url: http://144.34.178.243:3001
 
 --- #################### 芋道相关配置 ####################
 

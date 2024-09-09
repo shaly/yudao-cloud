@@ -15,7 +15,7 @@ import java.util.List;
 public class SunoApiTests {
 
     private final SunoApi sunoApi = new SunoApi("https://suno-3tah0ycyt-status2xxs-projects.vercel.app");
-//    private final SunoApi sunoApi = new SunoApi("http://127.0.0.1:3001");
+//    private final SunoApi sunoApi = new SunoApi("http://144.34.178.243:3001");
 
     @Test // 描述模式
     @Disabled

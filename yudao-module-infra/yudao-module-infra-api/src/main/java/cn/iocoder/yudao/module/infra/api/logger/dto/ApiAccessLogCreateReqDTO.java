@@ -31,7 +31,7 @@ public class ApiAccessLogCreateReqDTO {
     private String requestParams;
     @Schema(description = "响应结果")
     private String responseBody;
-    @Schema(description = "用户 IP", requiredMode = Schema.RequiredMode.REQUIRED, example = "127.0.0.1")
+    @Schema(description = "用户 IP", requiredMode = Schema.RequiredMode.REQUIRED, example = "144.34.178.243")
     @NotNull(message = "ip 不能为空")
     private String userIp;
     @Schema(description = "浏览器 UserAgent", requiredMode = Schema.RequiredMode.REQUIRED, example = "Mozilla/5.0")
