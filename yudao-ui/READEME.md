@@ -18,5 +18,10 @@ compute电脑；phone手机；mini4小程序;pad;app;
     /usr/local/games/gameoff2012/gameoff2012/;
 飞机打外星人compute&phone gAlienInvasion: 
     http://144.34.178.243:63345/index.html
-    /usr/local/games/AlienInvasion/AlienInvasion；   
+    /usr/local/games/AlienInvasion/AlienInvasion； 
+打砖块 aa&bb ball-and-wall:
+    http://144.34.178.243:63346/index.html
+    /usr/local/games/ballandwall/ballandwall
+
+
 2.
