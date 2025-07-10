@@ -38,6 +38,7 @@ public class AppDiyTemplateController {
     @GetMapping("/used")
     @Operation(summary = "使用中的装修模板")
     public CommonResult<AppDiyTemplatePropertyRespVO> getUsedDiyTemplate() {
+        System.out.print("999999999");
         DiyTemplateDO diyTemplate = diyTemplateService.getUsedDiyTemplate();
         return success(buildVo(diyTemplate));
     }

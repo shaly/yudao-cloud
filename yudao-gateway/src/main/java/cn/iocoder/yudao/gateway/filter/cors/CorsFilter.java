@@ -28,9 +28,11 @@ public class CorsFilter implements WebFilter {
         // 非跨域请求，直接放行
         ServerHttpRequest request = exchange.getRequest();
         if (!CorsUtils.isCorsRequest(request)) {
+            System.out.print("不跨域");
             return chain.filter(exchange);
         }
 
+        System.out.print("跨域");
         // 设置跨域响应头
         ServerHttpResponse response = exchange.getResponse();
         HttpHeaders headers = response.getHeaders();
@@ -38,10 +40,15 @@ public class CorsFilter implements WebFilter {
         headers.add("Access-Control-Allow-Methods", ALL);
         headers.add("Access-Control-Allow-Headers", ALL);
         headers.add("Access-Control-Max-Age", MAX_AGE);
+        // 允许携带凭证（如Cookie）
+        headers.add("Access-Control-Allow-Credentials", "true");
         if (request.getMethod() == HttpMethod.OPTIONS) {
+
+            System.out.print("111");
             response.setStatusCode(HttpStatus.OK);
             return Mono.empty();
         }
+        System.out.print("222");
         return chain.filter(exchange);
     }
 

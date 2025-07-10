@@ -1,6 +1,6 @@
 ### 注意；
 1.代码拉下来很久还没有成功下载所有jar包的话直接关闭idea然后重新打开。
-2.数据库sql初始化
+2.【数据库】sql初始化
 mac安装数据库：
 docker run -d -p 43306:3306 --name mysql43306 -e MYSQL_ROOT_PASSWORD=pwd123456 amd64/mysql:5.7
 进入容器登录mysql然后执行：
@@ -8,26 +8,46 @@ mysql -u root -p 然后输入密码进行登录
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'pwd123456';
 FLUSH PRIVILEGES;
 退出，然后重启docker容器
-3.reids
+3.【reids】
 docker pull redis
 docker run -d --name redis-server -p 46379:6379 -v /usr/local/games/docker/redis/data:/data redis  --requirepass pwd123456
 docker exec -it redis-server redis-cli
-4.nacos
+4.【nacos】
 本地：
 docker pull nacos/nacos-server:latest
-docker run -d --name nacos -e PREFER_HOST_MODE=hostname -e MODE=standalone -e SPRING_DATASOURCE_PLATFORM=mysql -e MYSQL_SERVICE_HOST=144.34.178.243 -e MYSQL_SERVICE_PORT=43306 -e MYSQL_SERVICE_DB_NAME=nacos_config -e MYSQL_SERVICE_USER=root -e MYSQL_SERVICE_PASSWORD=pwd123456 -p 48848:8848 nacos/nacos-server
+【ok本地无数据库】
+docker run --name nacos-standalone-derby -e MODE=standalone -e NACOS_AUTH_TOKEN=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -e NACOS_AUTH_IDENTITY_KEY=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -e NACOS_AUTH_IDENTITY_VALUE=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -p 58080:8080 -p 58848:8848 -p 59848:9848 -d nacos/nacos-server:latest
+5.【nginx】
+brew install nginx安装nginx
+[如果没成功再执行下面这句]
+brew install --verbose --debug nginx
+
+Docroot is: /opt/homebrew/var/www
+
+The default port has been set in /opt/homebrew/etc/nginx/nginx.conf to 8080 so that
+nginx can run without sudo.
+
+nginx will load all files in /opt/homebrew/etc/nginx/servers/.
+
+To start nginx now and restart at login:
+【启动】
+brew services start nginx
+【重启】
+brew services restart nginx
+Or, if you don't want/need a background service you can just run:
+/opt/homebrew/opt/nginx/bin/nginx -g daemon\ off\;
 
 
 服务器：
 https://github.com/alibaba/nacos/releases
     安装说明：https://www.iocoder.cn/Nacos/install/?yudao-cloud
-    部署地址：http://144.34.178.243:8848/nacos 账号密码：nacos nacos
+    部署地址：http://127.0.0.1:58080 账号密码：nacos nacos
 装完成之后，需要创建 dev 命名空间，如下图所示：
 
 注意！新建命名空间时，namespace用的是“命名空间ID”
 4.商城登录验证码9999
 3.
-3.
+
 3.
 3.
 3.
