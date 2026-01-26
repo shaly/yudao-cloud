@@ -1,41 +1,57 @@
 ### 注意；
 1.代码拉下来很久还没有成功下载所有jar包的话直接关闭idea然后重新打开。
-2.【数据库】sql初始化
-mac安装数据库：
-docker run -d -p 43306:3306 --name mysql43306 -e MYSQL_ROOT_PASSWORD=pwd123456 amd64/mysql:5.7
-进入容器登录mysql然后执行：
-mysql -u root -p 然后输入密码进行登录
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'pwd123456';
-FLUSH PRIVILEGES;
-退出，然后重启docker容器
+2.【数据库】
+    【不是第一次安装，直接启动docker】
+    直接打开docker Desktop 点击启动端口为 43306 的容器
+    【第一次安装启动】
+    sql初始化
+    mac安装数据库：
+    docker run -d -p 43306:3306 --name mysql43306 -e MYSQL_ROOT_PASSWORD=pwd123456 amd64/mysql:5.7
+    进入容器登录mysql然后执行：
+    mysql -u root -p 然后输入密码进行登录
+    GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'pwd123456';
+    FLUSH PRIVILEGES;
+    退出，然后重启docker容器
 3.【reids】
-docker pull redis
-docker run -d --name redis-server -p 46379:6379 -v /usr/local/games/docker/redis/data:/data redis  --requirepass pwd123456
-docker exec -it redis-server redis-cli
+    【不是第一次安装，直接启动docker】
+    直接打开docker Desktop 点击启动端口为 46379 的容器
+    【第一次安装启动】
+    docker pull redis
+    docker run -d --name redis-server -p 46379:6379 -v /usr/local/games/docker/redis/data:/data redis  --requirepass pwd123456
+    docker exec -it redis-server redis-cli
 4.【nacos】
-本地：
-docker pull nacos/nacos-server:latest
-【ok本地无数据库】
-docker run --name nacos-standalone-derby -e MODE=standalone -e NACOS_AUTH_TOKEN=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -e NACOS_AUTH_IDENTITY_KEY=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -e NACOS_AUTH_IDENTITY_VALUE=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -p 58080:8080 -p 58848:8848 -p 59848:9848 -d nacos/nacos-server:latest
+    【不是第一次安装，直接启动docker】
+    直接打开docker Desktop 点击启动端口为 58080 的容器
+    【第一次安装启动】
+    本地：
+    docker pull nacos/nacos-server:latest
+    【ok本地无数据库】
+    docker run --name nacos-standalone-derby -e MODE=standalone -e NACOS_AUTH_TOKEN=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -e NACOS_AUTH_IDENTITY_KEY=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -e NACOS_AUTH_IDENTITY_VALUE=cE5kM2pOaVp4N2R6R0p2V2h4bTlKbVZ0a0p5S3dOQjJnUQ== -p 58080:8080 -p 58848:8848 -p 59848:9848 -d nacos/nacos-server:latest
 5.【nginx】
-brew install nginx安装nginx
-[如果没成功再执行下面这句]
-brew install --verbose --debug nginx
-
-Docroot is: /opt/homebrew/var/www
-
-The default port has been set in /opt/homebrew/etc/nginx/nginx.conf to 8080 so that
-nginx can run without sudo.
-
-nginx will load all files in /opt/homebrew/etc/nginx/servers/.
-
-To start nginx now and restart at login:
-【启动】
-brew services start nginx
-【重启】
-brew services restart nginx
-Or, if you don't want/need a background service you can just run:
-/opt/homebrew/opt/nginx/bin/nginx -g daemon\ off\;
+    【不是第一次安装，直接启动docker】
+        【启动】
+        brew services start nginx
+        【重启】
+        brew services restart nginx
+    【第一次安装启动】
+    brew install nginx安装nginx
+    [如果没成功再执行下面这句]
+    brew install --verbose --debug nginx
+    
+    Docroot is: /opt/homebrew/var/www
+    
+    The default port has been set in /opt/homebrew/etc/nginx/nginx.conf to 8080 so that
+    nginx can run without sudo.
+    
+    nginx will load all files in /opt/homebrew/etc/nginx/servers/.
+    
+    To start nginx now and restart at login:
+    【启动】
+    brew services start nginx
+    【重启】
+    brew services restart nginx
+    Or, if you don't want/need a background service you can just run:
+    /opt/homebrew/opt/nginx/bin/nginx -g daemon\ off\;
 
 
 服务器：
